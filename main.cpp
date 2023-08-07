@@ -17,7 +17,7 @@ color ray_color(const ray &r, const hittable& world, int depth) {
   
   // recursively call ray_color with random reflections
   if (world.hit(r, 0.001, infinity, rec)) {
-    vec3 target = rec.point + rec.normal + random_in_unit_sphere();
+    vec3 target = rec.point + rec.normal + random_unit_vector();
     return 0.5 * ray_color(ray(rec.point, target - rec.point), world, depth - 1);
   }
   // otherwise shade background with linear gradient
