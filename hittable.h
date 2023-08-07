@@ -2,6 +2,9 @@
 #define HITTABLE_H
 
 #include "vec3.h"
+#include "rtweekend.h"
+
+class material;
 
 // struct for storing information for instances of ray intersections with objects
 struct hit_record {
@@ -10,6 +13,7 @@ struct hit_record {
   vec3 normal;  // surface normal at hit point
   double t;  // t parameter of ray at hit point
   bool front_face; // true if ray hits object from outside
+  shared_ptr<material> mat_ptr;
 
   // set normal so that it always points opposite ray
   inline void set_face_normal(const ray& r, const vec3& outward_normal) {
