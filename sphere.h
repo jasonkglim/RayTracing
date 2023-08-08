@@ -2,7 +2,7 @@
 #define SPHERE_H
 
 #include "hittable.h"
-#include "vec3.h"
+#include "rtweekend.h"
 
 // class declarations for sphere object, inheriting from hittable class
 class sphere : public hittable {
